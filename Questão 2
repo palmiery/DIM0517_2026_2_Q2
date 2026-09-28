@@ -1,0 +1,51 @@
+Questão 2
+
+git clone https://github.com/palmiery/DIM0517_2026_2_Q2.git
+echo "Questão 2" >> main.c
+git status
+git add .
+git commit -m "c1"
+git checkout -b feature/login
+echo "Modificação 1" >> main.c
+echo "Criação de login" > login.c
+git add .
+git commit -m "c2"
+echo "Criação do auth" > auth.c
+git add .
+git commit -m "c3"
+echo "Alteração em main" >> main.c
+echo "Criando test" > test.c
+git status
+git add .
+git commit -m "c4"
+
+Parte A
+git branch
+git switch main
+git merge --squash feature/login HEAD~1
+
+
+Parte B
+git switch feature/login
+echo "Alterando para novo merge Parte B" >> README.md
+git add .
+git commit -m "Modificando para merge Parte B"
+git switch main
+git merge --no-ff feature/login
+
+
+Enviando para repositório remoto
+git push origin main
+git push origin -u feature/login
+
+
+
+
+
+
+
+
+
+
+
+
